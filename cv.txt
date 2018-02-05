@@ -42,6 +42,4 @@ GPG FINGERPRINT
 
 
 
-
-
 Adrian Dvergsdal                  2018-02-05                              CV(7)
