@@ -3,27 +3,27 @@ CV(7)                         Adrian Dvergsdal                            CV(7)
 
 WORK EXPERIENCE
 
-    2016 – ···· Ambita: Software Engineer Internship                  part-time
-    2015 – 2016 Naturvernforbundet: Web Developer                     part-time
-    2012 – 2016 CompetIT: Developer                              full/part-time
-    2008 – 2011 Keyteq: Web Developer                                 full-time
+    2016 – ····  Ambita: Software Engineer Internship                 part-time
+    2015 – 2016  Naturvernforbundet: Web Developer                    part-time
+    2012 – 2016  CompetIT: Developer                             full/part-time
+    2008 – 2011  Keyteq: Web Developer                                full-time
 
 OTHER EXPERIENCE
 
-    2014 – 2016 Framtiden i Våre Hender Bergen: Board Member          volunteer
-    2012 – 2014 Foreningen for Ressursbasert Økonomi: Member          volunteer
-    2005 – 2008 ITpro.no: Administrator and Web Developer             volunteer
+    2014 – 2016  Framtiden i Våre Hender Bergen: Board Member         volunteer
+    2012 – 2014  Foreningen for Ressursbasert Økonomi: Member         volunteer
+    2005 – 2008  ITpro.no: Administrator and Web Developer            volunteer
 
 EDUCATION
 
-    2015 – ···· University of Bergen: Bachelor's Degree in Computer Technology
-    2006 – 2007 NITH Bergen: One-year study in Information Technology
+    2015 – ····  University of Bergen: Bachelor's Degree in Computer Technology
+    2006 – 2007  NITH Bergen: One-year study in Information Technology
 
 CERTIFICATION AND COURSES
 
-    2013 – 2014 Acem: Training in Interpersonal Communication (3 weeks)
-    2009        Ike Lasater: Communication Course (weekend)
-    2009        Zend Technologies: Zend Certified Engineer (PHP5)
+    2013 – 2014  Acem: Training in Interpersonal Communication (3 weeks)
+    2009         Ike Lasater: Communication Course (weekend)
+    2009         Zend Technologies: Zend Certified Engineer (PHP5)
 
 FREQUENTLY USED TECHOLOGIES
 
