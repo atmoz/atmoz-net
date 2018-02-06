@@ -34,7 +34,7 @@ CONTACT
     career@konto.atmoz.no       http://linkedin.com/in/atmoz
     +47 416 39 165              http://github.com/atmoz
 
-    GPG fingerprint : 8384 60D0 CBD2 6750 AB26 DF8F B9FB 68F9 8F88 BA47
+    GPG fingerprint: 8384 60D0 CBD2 6750 AB26 DF8F B9FB 68F9 8F88 BA47
 
 
 
