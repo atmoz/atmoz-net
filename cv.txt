@@ -1,10 +1,15 @@
 CV(7)                         Adrian Dvergsdal                            CV(7)
 
 
+EDUCATION
+
+    2015 – ····  University of Bergen: Bachelor's Degree in Computer Technology
+    2006 – 2007  NITH Bergen: One-year study in Information Technology
+
 WORK EXPERIENCE
 
-    2016 – ····  Ambita: Software Engineer Internship                 part-time
-    2015 – 2016  Naturvernforbundet: Web Developer                    part-time
+    2016 – 2018  Ambita: Software Engineer (DevOps) Internship        part-time
+    2015 – 2016  Naturvernforbundet: Web Developer                    freelance
     2012 – 2016  CompetIT: Developer                             full/part-time
     2008 – 2011  Keyteq: Web Developer                                full-time
 
@@ -14,11 +19,6 @@ OTHER EXPERIENCE
     2012 – 2014  Foreningen for Ressursbasert Økonomi: Member         volunteer
     2005 – 2008  ITpro.no: Administrator and Web Developer            volunteer
 
-EDUCATION
-
-    2015 – ····  University of Bergen: Bachelor's Degree in Computer Technology
-    2006 – 2007  NITH Bergen: One-year study in Information Technology
-
 CERTIFICATION AND COURSES
 
     2013 – 2014  Acem: Training in Interpersonal Communication (3 weeks)
@@ -27,12 +27,14 @@ CERTIFICATION AND COURSES
 
 FREQUENTLY USED TECHOLOGIES
 
-    Linux, Docker, AWS, Terraform, PHP, Java, Go, Python, SQL, JavaScript
+    Linux, Docker, Java, Go, Python, Bash, AWS, Terraform, Salt, Puppet, PHP,
+    HTML, SQL, JavaScript
 
 CONTACT
 
-    career@konto.atmoz.no       http://linkedin.com/in/atmoz
-    +47 416 39 165              http://github.com/atmoz
+    cv @ konto.atmoz.no                                   linkedin.com/in/atmoz
+    +47 416 39 165                                             github.com/atmoz
+                                                               keybase.io/atmoz
 
     PGP fingerprint: 8384 60D0 CBD2 6750 AB26 DF8F B9FB 68F9 8F88 BA47
 
