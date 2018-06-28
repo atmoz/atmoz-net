@@ -1,34 +1,64 @@
 CV(7)                         Adrian Dvergsdal                            CV(7)
 
 
-EDUCATION
+SYNOPSIS
 
-    2015 – ····  University of Bergen: Bachelor's Degree in Computer Technology
-    2006 – 2007  NITH Bergen: One-year study in Information Technology
+    Developer with broad experience, ranging from frontend to backend and
+    sysadmin. Avid user of open source tools such as Linux and automation with
+    Salt and Docker. Advocating DevOps practices and making order out of chaos.
+    Cutting edge and interested in personal and professional improvement.
 
 WORK EXPERIENCE
 
-    2016 – 2018  Ambita: Software Engineer (DevOps) Internship        part-time
-    2015 – 2016  Naturvernforbundet: Web Developer                    freelance
-    2012 – 2016  CompetIT: Developer                             full/part-time
-    2008 – 2011  Keyteq: Web Developer                                full-time
+    2016–2018 Ambita: Software Engineer (DevOps) Internship           part-time
+
+        Worked on a wide verity of tasks, including but not limited to:
+            - Upgrade legacy codebase from Java 7 (Ant+Ivy) to Java 8 (Maven)
+            - Automating PostgreSQL backup with Python using Amazon S3
+            - Wrapper Bash script around Terraform for shared states
+            - Setup Amazon CloudFront template for static files
+            - Added support for data checksums in PostgreSQL Puppet module
+        Tech used: Java, AWS, Terraform, Puppet, Linux, Python, Bash
+
+    2015–2016 Naturvernforbundet: Web Developer                       freelance
+
+        Complete rewrite of old Wordpress site into a more modern and durable
+        site (provekjore.no) using the Yii Framework. Everything except the
+        design was rewritten. I used Docker for development. Site includes an
+        admin login with management of content, users, orders, etc.
+        Tech used: PHP, MariaDB, Yii Framework, Docker
+
+    2012–2016 CompetIT: Developer & System Administrator         full/part-time
+
+        Developing and maintaining a national web site for equestrian sports
+        (horsepro.no). Transitioned site from old server to fresh Linux server
+        on Linode using a Docker setup. Responsible for server maintenance.
+        Tech used: PHP, MariaDB, Yii Framework, jQuery/React, Docker, Linux
+
+    2008–2011 Keyteq: Web Developer                                   full-time
+
+        Making professional web sites for businesses using in-house CMS.
+        Started with frontend (HTML/CSS/JS), but gradually moved to backend
+        tasks using mostly PHP. Did customizations for customers, like
+        integrations to shipping API, payment systems and order handling.
+        Tech used: PHP, JS, jQuery, MySQL, MongoDB, CMS, Integrations
+
+    2005–2008 ITpro.no: Administrator and Web Developer               volunteer
+
+        One of Norway's biggest IT news and community website. Moderated forum
+        content and developed forum extension for support (à la stackoverflow).
+
+EDUCATION & COURSES
+
+    2015–···· University of Bergen: Bachelor's Degree in Computer Technology
+    2013–2014 Acem: Training in Interpersonal Communication (3 weeks)
+    2009      Zend Technologies: Zend Certified Engineer (PHP5)
+    2006–2007 NITH Bergen: One-year study in Information Technology
 
 OTHER EXPERIENCE
 
-    2014 – 2016  Framtiden i Våre Hender Bergen: Board Member         volunteer
-    2012 – 2014  Foreningen for Ressursbasert Økonomi: Member         volunteer
-    2005 – 2008  ITpro.no: Administrator and Web Developer            volunteer
-
-CERTIFICATION AND COURSES
-
-    2013 – 2014  Acem: Training in Interpersonal Communication (3 weeks)
-    2009         Ike Lasater: Communication Course (weekend)
-    2009         Zend Technologies: Zend Certified Engineer (PHP5)
-
-FREQUENTLY USED TECHOLOGIES
-
-    Linux, Docker, Java, Go, Python, Bash, AWS, Terraform, Salt, Puppet, PHP,
-    HTML, SQL, JavaScript
+    2014–2016 Framtiden i Våre Hender Bergen: Board Member            volunteer
+    2012–2014 Foreningen for Ressursbasert Økonomi: Member            volunteer
 
 CONTACT
 
@@ -42,4 +72,4 @@ CONTACT
 
 
 
-Adrian Dvergsdal                  2018-02-05                              CV(7)
+Adrian Dvergsdal                  2018-06-28                              CV(7)
