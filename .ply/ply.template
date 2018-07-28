@@ -1,0 +1,62 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ .Title }} - atmoz.net</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
+    <link href="{{ .SiteRoot }}/style.css" rel="stylesheet" />
+</head>
+
+{{ define "cv" -}}
+    <pre>{{ include "cv.txt" }}</pre>
+{{ end -}}
+
+{{ define "tags" -}}
+    <h1>Tags</h1>
+    {{ $dir := .Dir -}}
+    {{ range $tag, $pages := .Site.Tags -}}
+        <h2><a name="{{ $tag }}" href="#{{ $tag }}">{{ $tag }}</a></h2>
+        <ul>
+        {{ range $pages }}
+        <li>
+            <a href="{{ pathRel $dir .Path }}">{{ .Title }}</a>
+        </li>
+        {{ end -}}
+        </ul>
+    {{ end -}}
+{{ end -}}
+
+<body>
+<div id="content">
+
+<!--<pre>
+    SiteRoot: {{ .SiteRoot }}
+    Dir: {{ .Dir }}
+    AbsDir: {{ .AbsDir }}
+    Path: {{ .Path }}
+    AbsPath: {{ .AbsPath }}
+    {{/* range globalRegexMatch "^labels:\.*tech.*$" }} {{ end */}}
+    {{/* globalRegexFindAll "^labels:((?:\s*[a-z]+\s*))$" */}}
+    Meta: {{ .Meta }}
+</pre>-->
+
+<header>
+    <nav>
+        <a id="host" href="{{ .SiteRoot }}/index.html">atmoz.net</a>
+        {{ if not (eq .SiteRoot ".") }}{{ range $path, $name := .DirParts -}}
+        / <a class="path" href="{{ $path }}/index.html">{{ $name }}</a>
+        {{ end }}{{ end }}
+    </nav>
+</header>
+
+{{ if eq .Path "cv.html" }}
+    {{ template "cv" . }}
+{{ else if eq .Path "tags.html" }}
+    {{ template "tags" . }}
+{{ else }}
+    {{ .Content }}
+{{ end }}
+
+</div>
+</body>
+</html>

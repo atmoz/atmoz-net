@@ -1,3 +1,7 @@
+---
+tags: [self-development]
+---
+
 # Alcohol debunked
 
 It's about two years since I stopped drinking alcohol. Before I was

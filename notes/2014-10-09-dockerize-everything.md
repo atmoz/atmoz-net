@@ -1,3 +1,7 @@
+---
+tags: [docker]
+---
+
 # Dockerize everything!
 
 I've been following the Docker project for some time now, and finally

@@ -1,3 +1,7 @@
+---
+tags: [self-development]
+---
+
 # Why I meditate
 
 I feel kinda ambivalent writing about this topic. You see, I love science and

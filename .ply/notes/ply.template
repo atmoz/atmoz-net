@@ -1,0 +1,25 @@
+<article>
+
+{{ .Content }}
+
+{{ if eq .Path "notes/index.html" }}
+    <ul>
+    {{ $dir := .Dir -}}
+    {{ range .SitemapReversed -}}
+        {{ if and (pathMatch "notes/*" .Path) (not (pathMatch "*/index.html" .Path)) }}
+        <li>
+            {{ regexFind "\\d{4}-\\d{2}-\\d{2}" .Path }}
+            <a href="{{ pathRel $dir .Path }}">{{ .Title }}</a>
+        </li>
+        {{ end }}
+    {{ end -}}
+    </ul>
+{{ end }}
+
+{{ if .Meta.tags }}
+<div id="tags">
+    # {{ range .Meta.tags }}<a href="{{ $.SiteRoot }}/tags.html#{{ . }}">{{ . }}</a> {{ end }}
+</div>
+{{ end }}
+
+</article>

@@ -1,6 +1,12 @@
+---
+tags: [bash]
+---
+
 # Rigid.bash
 
-_**Update 2014-01-26:** I've started implementing this concept in Go. I figured it's not optimal using Bash for this kind of thing, so I have renamed this project to rigid.bash (so I can use the original name for my Go project)._
+_**Update 2014-01-26:** I've started implementing this concept in Go. I figured
+it's not optimal using Bash for this kind of thing, so I have renamed this
+project to rigid.bash (so I can use the original name for my Go project)._
 
 One of my projects these days is making a simple static web page generator in Bash.
 It's a hell of a good way to learn Bash scripting.
