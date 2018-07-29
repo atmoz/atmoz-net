@@ -87,10 +87,10 @@ code {
 }
 
 pre {
-    outline: 10px solid #32302f;
+    margin: -10px;
+    padding: 10px;
     background: #32302f;
     overflow: auto;
-    font-size: 1.0em;
 }
 
 #tags {
