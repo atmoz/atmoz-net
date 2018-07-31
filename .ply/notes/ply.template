@@ -18,7 +18,9 @@
 
 {{ if .Meta.tags }}
 <div id="tags">
-    # {{ range .Meta.tags }}<a href="{{ $.SiteRoot }}/tags.html#{{ . }}">{{ . }}</a> {{ end }}
+    {{ regexFind "\\d{4}-\\d{2}-\\d{2}" .Path }}
+    <strong>#</strong>
+    {{ range .Meta.tags }}<a href="{{ $.SiteRoot }}/tags.html#{{ . }}">{{ . }}</a> {{ end }}
 </div>
 {{ end }}
 

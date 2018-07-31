@@ -100,5 +100,7 @@ pre {
 }
 
 #tags {
+    margin-top: 2.6rem;
     text-align: right;
+    color: #bdae93;
 }
