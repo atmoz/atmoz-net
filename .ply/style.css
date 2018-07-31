@@ -9,8 +9,27 @@ body, pre, code {
     font-size: 16px;
 }
 
-p {
-    margin: 1.5em 0;
+h1 {
+    color: #fbf1c7;
+    margin-top: 5px;
+    font-size: 2.2rem;
+}
+
+h2,h3,h4,h5,h6 {
+    color: #fbf1c7;
+    margin-top: 2.6rem;
+}
+
+h1 a, h2 a, h3 a {
+    color: #fbf1c7;
+}
+h1 a:hover, h2 a:hover, h3 a:hover {
+    color: #1d2021;
+    background: #fbf1c7;
+}
+
+p, ul, img, pre {
+    margin: 1.3rem 0;
 }
 
 ul {
@@ -56,15 +75,6 @@ nav .path:hover {
     color: #1d2021;
 }
 
-h1 {
-    margin: 20px 0;
-    font-size: 2.2em;
-}
-
-h1,h2,h3,h4,h5,h6 {
-    color: #fbf1c7;
-}
-
 a {
     color: #8ec07c;
     text-decoration: none;
@@ -77,20 +87,13 @@ a:hover {
     text-decoration: none;
 }
 
-h1 a, h2 a, h3 a {
-    color: #fbf1c7;
-}
-h1 a:hover, h2 a:hover, h3 a:hover {
-    color: #1d2021;
-    background: #fbf1c7;
-}
-
 code {
     color: #fabd2f;
 }
 
 pre {
-    margin: 1.5em -10px;
+    margin-left: -10px;
+    margin-right: -10px;
     padding: 10px;
     background: #32302f;
     overflow: auto;

@@ -7,25 +7,6 @@
     <link href="{{ .SiteRoot }}/style.css" rel="stylesheet" />
 </head>
 
-{{ define "cv" -}}
-    <pre>{{ include "cv.txt" }}</pre>
-{{ end -}}
-
-{{ define "tags" -}}
-    <h1>Tags</h1>
-    {{ $dir := .Dir -}}
-    {{ range $tag, $pages := .Site.Tags -}}
-        <h2><a name="{{ $tag }}" href="#{{ $tag }}">{{ $tag }}</a></h2>
-        <ul>
-        {{ range $pages }}
-        <li>
-            <a href="{{ pathRel $dir .Path }}">{{ .Title }}</a>
-        </li>
-        {{ end -}}
-        </ul>
-    {{ end -}}
-{{ end -}}
-
 <body>
 <div id="content">
 
@@ -43,18 +24,30 @@
 <header>
     <nav>
         <a id="host" href="{{ .SiteRoot }}/index.html">atmoz.net</a>
-        {{ if not (eq .SiteRoot ".") }}{{ range $path, $name := .DirParts -}}
+        {{ if not (eq .SiteRoot ".") | and (not (pathMatch "*/index.html" .Path)) }}
+        {{ range $path, $name := .DirParts -}}
         / <a class="path" href="{{ $path }}/index.html">{{ $name }}</a>
-        {{ end }}{{ end }}
+        {{ end }}
+        {{ end }}
     </nav>
 </header>
 
+{{ .Content }}
+
 {{ if eq .Path "cv.html" }}
-    {{ template "cv" . }}
+    <pre>{{ include "cv.txt" }}</pre>
 {{ else if eq .Path "tags.html" }}
-    {{ template "tags" . }}
-{{ else }}
-    {{ .Content }}
+    {{ $dir := .Dir -}}
+    {{ range $tag, $pages := .Site.Tags -}}
+        <h2><a name="{{ $tag }}" href="#{{ $tag }}">{{ $tag }}</a></h2>
+        <ul>
+        {{ range $pages }}
+        <li>
+            <a href="{{ pathRel $dir .Path }}">{{ .Title }}</a>
+        </li>
+        {{ end -}}
+        </ul>
+    {{ end -}}
 {{ end }}
 
 </div>
