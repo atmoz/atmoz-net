@@ -4,13 +4,18 @@
     <meta name="viewport" content="width=device-width" />
     <title>{{ .Title }} - atmoz.net</title>
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
-    <link href="{{ .SiteRoot }}/style.css" rel="stylesheet" />
+    <link href="{{ .Rel "/style.css" }}" rel="stylesheet" />
+    <link href="{{ .Rel "/notes/feed.xml" }}" type="application/atom+xml" rel="alternate" title="All notes" />
+    {{ range $tag, $pages := .Site.Tags -}}
+    <link href="{{ $.Rel (printf "/tags/%s.xml" $tag) }}" type="application/atom+xml" rel="alternate" title="#{{ $tag }}" />
+    {{ end -}}
 </head>
 
 <body>
 <div id="content">
 
 <!--<pre>
+    Name: {{ .Name }}
     SiteRoot: {{ .SiteRoot }}
     Dir: {{ .Dir }}
     AbsDir: {{ .AbsDir }}
@@ -23,12 +28,14 @@
 
 <header>
     <nav>
-        <a id="host" href="{{ .SiteRoot }}/index.html">atmoz.net</a>
-        {{ if not (eq .SiteRoot ".") | and (not (pathMatch "*/index.html" .Path)) }}
-        {{ range $path, $name := .DirParts -}}
-        / <a class="path" href="{{ $path }}/index.html">{{ $name }}</a>
-        {{ end }}
-        {{ end }}
+        <a id="host" href="{{ .Rel "/index.html" }}">atmoz.net</a>
+        {{ if not (eq .SiteRoot ".") }}
+            {{ range $path, $name := .DirParts -}}
+                {{ if not ( and (eq ($.Rel $path) ".") (eq $.Name "index.html") ) -}}
+                / <a class="path" href="{{ $.Rel $path }}/index.html">{{ $name }}</a>
+                {{ end -}}
+            {{ end -}}
+        {{ end -}}
     </nav>
 </header>
 
@@ -36,18 +43,6 @@
 
 {{ if eq .Path "cv.html" }}
     <pre>{{ include "cv.txt" }}</pre>
-{{ else if eq .Path "tags.html" }}
-    {{ $dir := .Dir -}}
-    {{ range $tag, $pages := .Site.Tags -}}
-        <h2><a name="{{ $tag }}" href="#{{ $tag }}">{{ $tag }}</a></h2>
-        <ul>
-        {{ range $pages }}
-        <li>
-            <a href="{{ pathRel $dir .Path }}">{{ .Title }}</a>
-        </li>
-        {{ end -}}
-        </ul>
-    {{ end -}}
 {{ end }}
 
 </div>

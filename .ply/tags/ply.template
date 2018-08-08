@@ -1,0 +1,44 @@
+{{ define "feed" -}}
+{{ $tag := index . 0 -}}
+{{ $pages := index . 1 -}}
+{{ $url := "http://atmoz.net" -}}
+{{ $RFC3339 := "2006-01-02T15:04:05Z07:00" -}}
+{{ $fileTimeLayout := "2006-01-02" -}}
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>atmoz.net - notes tagged {{ $tag }}</title>
+  <link href="{{ $url }}/notes"></link>
+  <id>{{ $url }}/notes</id>
+  <updated>{{ timeNow.Format $RFC3339 }}</updated>
+  <summary>Notes tagged {{ $tag }}</summary>
+
+  {{ range $pages -}}
+  {{ $pageDate := regexFind `\d{4}-\d{2}-\d{2}` .Name }}
+  <entry>
+    <title>{{ .Title }}</title>
+    <link href="{{ $url }}/{{ .Path }}"></link>
+    <updated>{{ timeFormat (timeParse $fileTimeLayout $pageDate) $RFC3339 }}</updated>
+    <id>tag:atmoz.net,{{ $pageDate }}:/{{ .Path }}</id>
+    <summary type="html"><![CDATA[{{ regexFind `(?Us:<p>.*</p>)` .Content }}]]></summary>
+    <author>
+      <name>Adrian Dvergsdal</name>
+    </author>
+  </entry>
+  {{ end -}}
+</feed>
+{{ end -}}
+
+{{ .Content }}
+
+{{ $dir := .Dir -}}
+{{ range $tag, $pages := .Site.Tags -}}
+    {{ writeTemplate (printf "%s.xml" $tag) "feed" (array $tag $pages) -}}
+    <h2><a name="{{ $tag }}" href="{{ $tag }}.xml" class="feed">{{ $tag }}</a></h2>
+    <ul>
+    {{ range $pages }}
+    <li>
+        <a href="{{ pathRel $dir .Path }}">{{ .Title }}</a>
+    </li>
+    {{ end -}}
+    </ul>
+{{ end -}}
