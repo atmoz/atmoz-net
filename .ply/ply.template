@@ -1,8 +1,9 @@
+{{ $config := yamlRead "config.yaml" -}}
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
-    <title>{{ .Title }} - atmoz.net</title>
+    <title>{{ .Title }} - {{ $config.title }}</title>
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
     <link href="{{ .Rel "/style.css" }}" rel="stylesheet" />
     <link href="{{ .Rel "/notes/feed.xml" }}" type="application/atom+xml" rel="alternate" title="All notes" />
@@ -14,21 +15,9 @@
 <body>
 <div id="content">
 
-<!--<pre>
-    Name: {{ .Name }}
-    SiteRoot: {{ .SiteRoot }}
-    Dir: {{ .Dir }}
-    AbsDir: {{ .AbsDir }}
-    Path: {{ .Path }}
-    AbsPath: {{ .AbsPath }}
-    {{/* range globalRegexMatch "^labels:\.*tech.*$" }} {{ end */}}
-    {{/* globalRegexFindAll "^labels:((?:\s*[a-z]+\s*))$" */}}
-    Meta: {{ .Meta }}
-</pre>-->
-
 <header>
     <nav>
-        <a id="host" href="{{ .Rel "/index.html" }}">atmoz.net</a>
+        <a id="host" href="{{ .Rel "/index.html" }}">{{ $config.title }}</a>
         {{ if not (eq .SiteRoot ".") }}
             {{ range $path, $name := .DirParts -}}
                 {{ if not ( and (eq ($.Rel $path) ".") (eq $.Name "index.html") ) -}}

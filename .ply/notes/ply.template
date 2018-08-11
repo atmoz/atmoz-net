@@ -1,38 +1,10 @@
-{{ define "feed" -}}
-{{ $url := "http://atmoz.net" -}}
-{{ $RFC3339 := "2006-01-02T15:04:05Z07:00" -}}
-{{ $fileTimeLayout := "2006-01-02" -}}
-<?xml version="1.0" encoding="UTF-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>atmoz.net - all notes</title>
-  <link href="{{ $url }}/notes"></link>
-  <id>{{ $url }}/notes</id>
-  <updated>{{ timeNow.Format $RFC3339 }}</updated>
-  <summary>All notes</summary>
-
-  {{ range .Sitemap -}}
-  {{ if (pathMatch "notes/*" .Path) | and (not (pathMatch "*/index.html" .Path)) }}
-  {{ $pageDate := regexFind `\d{4}-\d{2}-\d{2}` .Name }}
-  <entry>
-    <title>{{ .Title }}</title>
-    <link href="{{ $url }}/{{ .Path }}"></link>
-    <updated>{{ timeFormat (timeParse $fileTimeLayout $pageDate) $RFC3339 }}</updated>
-    <id>tag:atmoz.net,{{ $pageDate }}:/{{ .Path }}</id>
-    <summary type="html"><![CDATA[{{ regexFind `(?Us:<p>.*</p>)` .Content }}]]></summary>
-    <author>
-      <name>Adrian Dvergsdal</name>
-    </author>
-  </entry>
-  {{ end -}}
-  {{ end -}}
-</feed>
-{{ end -}}
+{{ templateImport (.Rel "feed.template") "feed" -}}
 
 <article>
 
 {{ if eq .Path "notes/index.html" }}
+    {{ templateWrite "feed" "feed.xml" (array $ "All notes" .Sitemap) -}}
     <h1><a href="feed.xml" class="feed">Notes</a></h1>
-    {{ writeTemplate "feed.xml" "feed" . -}}
     <ul>
     {{ $dir := .Dir -}}
     {{ range .SitemapReversed -}}

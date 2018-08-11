@@ -1,0 +1,30 @@
+{{ $ := index . 0 -}}
+{{ $title := index . 1 -}}
+{{ $pages := index . 2 -}}
+{{ $config := yamlRead ($.Rel "config.yaml") -}}
+{{ $RFC3339 := "2006-01-02T15:04:05Z07:00" -}}
+{{ $fileTimeLayout := "2006-01-02" -}}
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ $config.title }} - {{ $title }}</title>
+  <link href="{{ $config.url }}/notes"></link>
+  <id>{{ $config.url }}/notes</id>
+  <updated>{{ timeNow.Format $RFC3339 }}</updated>
+  <summary>{{ $title }}</summary>
+  <author>
+    <name>{{ $config.author }}</name>
+  </author>
+
+  {{ range $pages -}}
+  {{ if (pathMatch "notes/*" .Path) | and (not (pathMatch "*/index.html" .Path)) }}
+  {{ $pageDate := regexFind `\d{4}-\d{2}-\d{2}` .Name }}
+  <entry>
+    <title>{{ .Title }}</title>
+    <link href="{{ $config.url }}/{{ .Path }}"></link>
+    <id>{{ $config.url }}/{{ .Path }}</id>
+    <updated>{{ timeFormat (timeParse $fileTimeLayout $pageDate) $RFC3339 }}</updated>
+    <summary type="html"><![CDATA[{{ regexFind `(?Us:<p>.*</p>)` .Content }}]]></summary>
+  </entry>
+  {{ end -}}
+  {{ end -}}
+</feed>

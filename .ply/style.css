@@ -1,6 +1,6 @@
 body {
-    line-height: 1.3;
-    background: #282828;
+    line-height: 1.4;
+    background: #1d2021 url("img/background.png");
     color: #ebdbb2;
 }
 
@@ -11,7 +11,7 @@ body, pre, code {
 
 h1 {
     color: #fbf1c7;
-    margin-top: 5px;
+    margin-top: 0px;
     font-size: 2.2rem;
 }
 
@@ -94,7 +94,7 @@ pre {
     margin-left: -10px;
     margin-right: -10px;
     padding: 10px;
-    background: #32302f;
+    background: #282828;
     overflow: auto;
 }
 
