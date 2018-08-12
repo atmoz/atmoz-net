@@ -1,6 +1,7 @@
 body {
     line-height: 1.4;
     background: #1d2021 url("img/background.png");
+    background-size: 512px;
     color: #ebdbb2;
 }
 
