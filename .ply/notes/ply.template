@@ -20,12 +20,12 @@
 {{ .Content }}
 {{ end }}
 
-{{ if .Meta.tags }}
-<div id="tags">
+<footer>
     {{ regexFind `\d{4}-\d{2}-\d{2}` .Name }}
+    {{ if .Meta.tags }}
     <strong>#</strong>
     {{ range .Meta.tags }}<a href="{{ $.SiteRoot }}/tags/index.html#{{ . }}">{{ . }}</a> {{ end }}
-</div>
-{{ end }}
+    {{ end }}
+</footer>
 
 </article>
