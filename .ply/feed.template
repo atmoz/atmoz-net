@@ -1,6 +1,6 @@
-{{ $ := index . 0 -}}
-{{ $title := index . 1 -}}
-{{ $pages := index . 2 -}}
+{{ $ := index .Data 0 -}}
+{{ $title := index .Data 1 -}}
+{{ $pages := index .Data 2 -}}
 {{ $config := yamlRead ($.Rel "config.yaml") -}}
 {{ $RFC3339 := "2006-01-02T15:04:05Z07:00" -}}
 {{ $fileTimeLayout := "2006-01-02" -}}

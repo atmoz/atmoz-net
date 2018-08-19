@@ -1,5 +1,5 @@
 # Adrian Dvergsdal
 
-* [Notes](notes/index.html)
-* [CV](cv.html)
+* [Notes](notes/index.md)
+* [CV](cv.md)
 
