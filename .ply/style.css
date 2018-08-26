@@ -64,19 +64,27 @@ ul {
     }
 }
 
-nav #host {
+header {
+    position: sticky;
+    top: 0;
+    margin: 0 -10px;
+    padding: 10px;
+    background: #212121;
+}
+
+#host {
     color: #b8bb26;
     font-weight: bold;
 }
-nav #host:hover {
+#host:hover {
     background-color: #b8bb26;
     color: #1d2021;
 }
 
-nav .path {
+header nav .path {
     color: #83a598;
 }
-nav .path:hover {
+header nav .path:hover {
     background: #83a598;
     color: #1d2021;
 }
