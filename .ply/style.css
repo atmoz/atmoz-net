@@ -64,27 +64,19 @@ ul {
     }
 }
 
-header {
-    position: sticky;
-    top: 0;
-    margin: 0 -10px;
-    padding: 10px;
-    background: #212121;
-}
-
-#host {
+nav #host {
     color: #b8bb26;
     font-weight: bold;
 }
-#host:hover {
+nav #host:hover {
     background-color: #b8bb26;
     color: #1d2021;
 }
 
-header nav .path {
+nav .path {
     color: #83a598;
 }
-header nav .path:hover {
+nav .path:hover {
     background: #83a598;
     color: #1d2021;
 }
