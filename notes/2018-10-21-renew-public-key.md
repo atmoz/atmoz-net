@@ -8,10 +8,10 @@ tags: [pgp]
 * Boot Tails in offline mode
 * Make private key available for use
 * Renew subkeys:
-** `gpg --edit-key <key>`
-** `key 1`, `key 2`, etc.
-** `expire`
-** `save`
+  * `gpg --edit-key <key>`
+  * `key 1`, `key 2`, etc.
+  * `expire`
+  * `save`
 * Export new public key: `gpg --export --armor > key.asc`
 * Save public key to external storage
 * Boot back to normal OS
