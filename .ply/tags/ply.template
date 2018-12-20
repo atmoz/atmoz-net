@@ -2,14 +2,13 @@
 
 {{ .Content }}
 
-{{ $dir := .Dir -}}
 {{ range $tag, $pages := .Site.Tags -}}
     {{ templateWrite "feed" (printf "%s.xml" $tag) (array $ (printf "Notes tagged %s" $tag) $pages) -}}
     <h2><a name="{{ $tag }}" href="{{ $tag }}.xml" class="feed">{{ $tag }}</a></h2>
     <ul>
     {{ range $pages }}
     <li>
-        <a href="{{ pathRel $dir .Path }}">{{ .Title }}</a>
+        <a href="{{ $.Rel .Path }}">{{ .Title }}</a>
     </li>
     {{ end -}}
     </ul>
