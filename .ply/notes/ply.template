@@ -6,12 +6,11 @@
     {{ templateWrite "feed" "feed.xml" (array $ "All notes" .Sitemap) -}}
     <h1><a href="feed.xml" class="feed">Notes</a></h1>
     <ul>
-    {{ $dir := .Dir -}}
     {{ range .SitemapReversed -}}
         {{ if (pathMatch "notes/*" .Path) | and (not (pathMatch "*/index.html" .Path)) }}
         <li>
             {{ regexFind `\d{4}-\d{2}-\d{2}` .Name }}
-            <a href="{{ pathRel $dir .Path }}">{{ .Title }}</a>
+            <a href="{{ $.Rel .Path }}">{{ .Title }}</a>
         </li>
         {{ end }}
     {{ end -}}
