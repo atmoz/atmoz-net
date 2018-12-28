@@ -31,7 +31,7 @@
 {{ .Content }}
 
 {{- if eq .Url "index.html" -}}
-<h2>Last 5 notes</h2>
+<h2>Latest notes</h2>
 <ul>
 {{- $numNotes := 0 }}
 {{- range .SitemapReversed }}
@@ -40,7 +40,7 @@
     {{ if le $numNotes 5 }}<li><a href="{{ $.UrlRelTo .Url }}">{{ .Title }}</a></li>{{ end }}
     {{- end -}}
 {{- end -}}
-    <li><a href="notes/index.html">[...]</a></li>
+    <li><a href="notes/index.html">···</a></li>
 </ul>
 {{- end -}}
 
