@@ -1,16 +1,16 @@
-{{ templateImport (.Rel "feed.template") "feed" -}}
+{{ templateImport (.UrlRelTo "feed.template") "feed" -}}
 
 <article>
 
-{{ if eq .Path "notes/index.html" }}
+{{ if eq .Url "notes/index.html" }}
     {{ templateWrite "feed" "feed.xml" (array $ "All notes" .Sitemap) -}}
     <h1><a href="feed.xml" class="feed">Notes</a></h1>
     <ul>
     {{ range .SitemapReversed -}}
-        {{ if (pathMatch "notes/*" .Path) | and (not (pathMatch "*/index.html" .Path)) }}
+        {{ if (urlMatch "notes/*" .Url) | and (not (urlMatch "*/index.html" .Url)) }}
         <li>
             {{ regexFind `\d{4}-\d{2}-\d{2}` .Name }}
-            <a href="{{ $.Rel .Path }}">{{ .Title }}</a>
+            <a href="{{ $.UrlRelTo .Url }}">{{ .Title }}</a>
         </li>
         {{ end }}
     {{ end -}}
@@ -23,7 +23,7 @@
     {{ regexFind `\d{4}-\d{2}-\d{2}` .Name }}
     {{ if .Meta.tags }}
     <strong>#</strong>
-    {{ range .Meta.tags }}<a href="{{ $.SiteRoot }}/tags/index.html#{{ . }}">{{ . }}</a> {{ end }}
+    {{ range .Meta.tags }}<a href="{{ $.UrlToRoot }}/tags/index.html#{{ . }}">{{ . }}</a> {{ end }}
     {{ end }}
 </footer>
 

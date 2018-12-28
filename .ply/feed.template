@@ -1,7 +1,7 @@
 {{ $ := index .Data 0 -}}
 {{ $title := index .Data 1 -}}
 {{ $pages := index .Data 2 -}}
-{{ $config := yamlRead ($.Rel "config.yaml") -}}
+{{ $config := yamlRead ($.UrlRelTo "config.yaml") -}}
 {{ $RFC3339 := "2006-01-02T15:04:05Z07:00" -}}
 {{ $fileTimeLayout := "2006-01-02" -}}
 <?xml version="1.0" encoding="UTF-8"?>
@@ -16,12 +16,12 @@
   </author>
 
   {{ range $pages -}}
-  {{ if (pathMatch "notes/*" .Path) | and (not (pathMatch "*/index.html" .Path)) }}
+  {{ if (urlMatch "notes/*" .Url) | and (not (urlMatch "*/index.html" .Url)) }}
   {{ $pageDate := regexFind `\d{4}-\d{2}-\d{2}` .Name }}
   <entry>
     <title>{{ .Title }}</title>
-    <link href="{{ $config.url }}/{{ .Path }}"></link>
-    <id>{{ $config.url }}/{{ .Path }}</id>
+    <link href="{{ $config.url }}/{{ .Url }}"></link>
+    <id>{{ $config.url }}/{{ .Url }}</id>
     <updated>{{ timeFormat (timeParse $fileTimeLayout $pageDate) $RFC3339 }}</updated>
     <summary type="html"><![CDATA[{{ regexFind `(?Us:<p>.*</p>)` .Content }}]]></summary>
   </entry>

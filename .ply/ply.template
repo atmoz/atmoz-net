@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width" />
     <title>{{ .Title }} - {{ $config.title }}</title>
     <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
-    <link href="{{ .Rel "style.css" }}" rel="stylesheet" />
-    <link href="{{ .Rel "notes/feed.xml" }}" type="application/atom+xml" rel="alternate" title="All notes" />
+    <link href="{{ .UrlRelTo "style.css" }}" rel="stylesheet" />
+    <link href="{{ .UrlRelTo "notes/feed.xml" }}" type="application/atom+xml" rel="alternate" title="All notes" />
     {{ range $tag, $pages := .Site.Tags -}}
-    <link href="{{ $.Rel (printf "tags/%s.xml" $tag) }}" type="application/atom+xml" rel="alternate" title="#{{ $tag }}" />
+    <link href="{{ $.UrlRelTo (printf "tags/%s.xml" $tag) }}" type="application/atom+xml" rel="alternate" title="#{{ $tag }}" />
     {{ end -}}
 </head>
 
@@ -17,11 +17,11 @@
 
 <header>
     <nav>
-        <a id="host" href="{{ .Rel "index.html" }}">{{ $config.title }}</a>
-        {{ if not (eq .SiteRoot ".") }}
-            {{ range $path, $name := .DirParts -}}
-                {{ if not (eq $.Path (printf "%s/index.html" $path)) -}}
-                / <a class="path" href="{{ $.Rel $path }}/index.html">{{ $name }}</a>
+        <a id="host" href="{{ .UrlRelTo "index.html" }}">{{ $config.title }}</a>
+        {{ if not (eq .UrlToRoot ".") }}
+            {{ range $url, $name := .UrlDirParts -}}
+                {{ if not (eq $.Url (printf "%s/index.html" $url)) -}}
+                / <a class="path" href="{{ $.UrlRelTo $url }}/index.html">{{ $name }}</a>
                 {{ end -}}
             {{ end -}}
         {{ end -}}
@@ -30,7 +30,7 @@
 
 {{ .Content }}
 
-{{ if eq .Path "cv.html" }}
+{{ if eq .Url "cv.html" }}
     <pre>{{ include "cv.txt" }}</pre>
 {{ end }}
 
