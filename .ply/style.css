@@ -126,8 +126,9 @@ footer {
 
 [href^="ftp"]::after,
 [href^="http"]::after {
-    content: "↪";
-    padding-left: 0.33rem;
+    content: "›";
+    padding-left: 0.25rem;
     white-space: nowrap;
     color: #ca480e;
+    font-weight: bold;
 }
