@@ -1,0 +1,11 @@
+{
+  "environment": {
+    "account": "589433736869",
+    "region": "eu-central-1"
+  },
+  "certificate-arn": "arn:aws:acm:us-east-1:589433736869:certificate/c2692c13-c75f-4aa5-9add-b5b5fe711290",
+  "hosted-zone:account=589433736869:domainName=atmoz.net:region=eu-central-1": {
+    "Id": "/hostedzone/Z2LXNU1HGEQBOW",
+    "Name": "atmoz.net."
+  }
+}
